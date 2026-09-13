@@ -1,0 +1,26 @@
+data_dir: data
+wal:
+  sync_interval_ms: 10
+  sync_bytes: 65536
+  segment_max_bytes: 268435456
+  segment_max_ms: 60000
+  queue_capacity: 65536
+reaper:
+  interval: 1m
+  wal_retention: 24h
+  local_parquet_retention: 24h
+  disk_high_watermark: 0.80
+archive:
+  bar_1s:
+    max_closed_seconds: 3600
+    hour_watermark_ms: 2000
+    rotate_on_utc_date_change: true
+oss:
+  enabled: true
+  # 东京 ECS 走内网；本机调试改成 oss-ap-northeast-1.aliyuncs.com
+  endpoint: oss-ap-northeast-1-internal.aliyuncs.com
+  bucket: cex-data
+  prefix: lake
+  role_name: ecs-oss-writer
+  upload: on_part_close
+  poll_interval: 1s

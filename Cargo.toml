@@ -1,0 +1,43 @@
+[workspace]
+resolver = "2"
+members = [
+    "crates/core",
+    "crates/source-binance",
+    "crates/source-hyperliquid",
+    "crates/archive",
+    "crates/publish-oss",
+    "crates/collect",
+]
+
+[workspace.package]
+version = "0.1.0"
+edition = "2021"
+
+[workspace.dependencies]
+anyhow = "1"
+async-trait = "0.1"
+chrono = { version = "0.4", features = ["clock"] }
+crc32c = "0.6"
+fs2 = "0.4"
+futures-util = "0.3"
+hex = "0.4"
+hmac = "0.12"
+postcard = { version = "1", features = ["use-std", "alloc"] }
+reqwest = { version = "0.12", default-features = false, features = ["json", "rustls-tls"] }
+rusqlite = { version = "0.32", features = ["bundled"] }
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+serde_yaml = "0.9"
+sha1 = "0.10"
+thiserror = "2"
+tokio = { version = "1", features = ["full"] }
+tokio-tungstenite = { version = "0.26", features = ["rustls-tls-native-roots"] }
+tracing = "0.1"
+tracing-subscriber = { version = "0.3", features = ["env-filter"] }
+uuid = { version = "1", features = ["v4", "serde"] }
+arrow = { version = "54", default-features = false, features = ["chrono-tz"] }
+parquet = { version = "54", default-features = false, features = ["zstd", "arrow", "snap"] }
+base64 = "0.22"
+sha2 = "0.10"
+md-5 = "0.10"
+tempfile = "3"

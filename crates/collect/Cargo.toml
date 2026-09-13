@@ -1,0 +1,17 @@
+[package]
+name = "collector-collect"
+version.workspace = true
+edition.workspace = true
+
+[[bin]]
+name = "collect"
+path = "src/main.rs"
+
+[dependencies]
+collector-core = { path = "../core" }
+source-binance = { path = "../source-binance" }
+source-hyperliquid = { path = "../source-hyperliquid" }
+anyhow.workspace = true
+tokio.workspace = true
+tracing.workspace = true
+tracing-subscriber.workspace = true

@@ -1,0 +1,5 @@
+enabled: true
+channels: [bbo, trade, funding]
+asset_classes: [crypto, equity]
+quote_assets: [USDT]
+# symbols: [BTCUSDT, ETHUSDT, TSLAUSDT]  # optional allow-list

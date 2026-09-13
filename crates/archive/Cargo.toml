@@ -1,0 +1,20 @@
+[package]
+name = "collector-archive"
+version.workspace = true
+edition.workspace = true
+
+[[bin]]
+name = "archive"
+path = "src/main.rs"
+
+[dependencies]
+collector-core = { path = "../core" }
+anyhow.workspace = true
+arrow.workspace = true
+chrono.workspace = true
+parquet.workspace = true
+tokio.workspace = true
+tracing.workspace = true
+tracing-subscriber.workspace = true
+uuid.workspace = true
+serde.workspace = true

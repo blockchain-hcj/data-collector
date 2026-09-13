@@ -1,0 +1,5 @@
+enabled: true
+channels: [bbo, trade, funding]
+asset_classes: [crypto, equity]
+hip3_dexes: [xyz]
+# symbols: [BTC, ETH, xyz:AAPL]

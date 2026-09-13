@@ -1,0 +1,16 @@
+[Unit]
+Description=data-collector collect (%i)
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+WorkingDirectory=/opt/data-collector
+Environment=RUST_LOG=info
+ExecStart=/opt/data-collector/collect --exchange %i --config /opt/data-collector/config/collector.yaml
+Restart=always
+RestartSec=3
+LimitNOFILE=65535
+
+[Install]
+WantedBy=multi-user.target
